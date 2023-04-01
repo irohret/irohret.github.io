@@ -1,0 +1,217 @@
+
+/*
+  # will style the single element declared with an attribute id="foo"
+  . will style all elements with an attribute class="foo" 
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+/* universal selecter for all the text and reset everything */ 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.showcase{
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    background: #111;
+    align-items: center;
+    color: white; 
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.showcase header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.showcase.active{
+    right: 300px;
+}
+
+.title-container {
+    position: relative;
+    font-size: 60px;
+    left: 25px;
+    transition: left 0.5s ease;
+}
+  
+/* move the 'blog title' info the right if the sidebar is active */
+.showcase.active .title-container{
+    left: calc(25px + 250px);
+}
+  
+
+/* move the 'text' info the right if the sidebar is active */
+.showcase.active .text {
+    left: calc(25px + 250px);
+}
+
+
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: url('/assets/white-menu.png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+}
+
+.toggle.active{
+    background: url('/assets/white-X.png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+}
+
+.showcase video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* fill screen */
+    opacity: 0.8;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0ed8e6; /* add an color layer onto the background */
+    mix-blend-mode: overlay;
+}
+
+.sidebar details {
+    margin-bottom: 10px;
+}
+  
+.sidebar.search-box { 
+    margin-bottom: 20px;
+    border-color: black;
+}
+
+#search-box input[type="text"] {
+    width: 90%; /* search box size for the left (x axis) */
+    padding: 15px; /* scale search box size */ 
+    border: 0;
+    border-color: black;
+    border-radius: 20px;
+    margin-top: 10px; /* move search box from the top of the sidebar*/
+}
+
+.sidebar {
+    position: absolute;
+    top: 0; /* adjust side top potisiton */
+    right: 10px;
+    width: 250px; /* adjust size of sidebar on the x-axis*/
+    height: 100%; 
+    /*background-color: #3d414d;*/
+    padding: 20px;
+    align-items: center;
+    justify-content: center;    
+}
+
+.sidebar ul {
+    position: relative;
+    list-style-type: none;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    font-size: 24px;
+    color: black;
+}
+
+/* change colors when curver is over and option */
+.sidebar ul li a:hover {
+    color: blue;
+}
+
+.text h2 {
+    font-size: 5em;
+    font-weight: 800;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.text h3 {
+    font-size: 5em;
+    font-weight: 800;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.text p {
+    font-size: 1.1em;
+    font-weight: 400;
+    margin: 20px 0;
+    max-width: 700px;
+   
+}
+
+.text a {
+    display: inline-block;
+    font-size: 1.5em;
+    background: white;
+    text-decoration: none; /* remove underscore */
+    color:rgb(0, 0, 0);
+    padding: 10px 30px;
+    margin-top: 10px;
+}
+
+.text{ /* center text */
+    position: relative; /* auto aline the text with the size of the window */
+    z-index: 10;
+    left: 25px; /* shift left or right by x number of pixels */
+    transition: left 0.5s ease; /* add transition property for 'text' content*/
+}
+
+.text a:hover{
+    letter-spacing: 6px;
+}
+
+.social{
+    position: absolute;
+    z-index: 10;
+    bottom: 80px; /* change img location */
+    margin-right: 10px; /* change the placement witin the banner */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 100px;
+    transition: left 0.5s ease; /* add transition effect */
+}
+
+.social img {
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: 0 auto;
+   
+}
+
+.showcase.active .social{
+    left: calc(25px + 350px);
+}
