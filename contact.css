@@ -68,7 +68,7 @@
     position: relative;
     width: 60px;
     height: 60px;
-    background: url('/black_HAM.png');
+    background: url('black_HAM.png');
     background-repeat: no-repeat;
     background-size: 30px;
     background-position: center;
@@ -76,7 +76,7 @@
 }
 
 .toggle.active{
-    background: url('/black_X.png');
+    background: url('black_X.png');
     background-repeat: no-repeat;
     background-size: 30px;
     background-position: center;

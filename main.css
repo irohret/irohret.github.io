@@ -71,14 +71,14 @@
     position: relative;
     width: 60px;
     height: 60px;
-    background: url('/white-menu.png');
+    background: url('white-menu.png');
     background-repeat: no-repeat;
     background-size: 30px;
     background-position: center;
 }
 
 .toggle.active {
-    background: url('/white-X.png');
+    background: url('white-X.png');
     background-repeat: no-repeat;
     background-size: 30px;
     background-position: center;
