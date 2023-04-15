@@ -13,9 +13,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  
 }
 
-.showcase{
+.showcase {
     position: absolute;
     right: 0;
     width: 100%;
@@ -30,7 +31,7 @@
     transition: 0.5s;
 }
 
-.showcase header{
+.showcase header {
     position: absolute;
     top: 0;
     left: 0;
@@ -42,7 +43,7 @@
     justify-content: space-between;
 }
 
-.showcase.active{
+.showcase.active {
     right: 300px;
 }
 
@@ -54,7 +55,7 @@
 }
   
 /* move the 'blog title' info the right if the sidebar is active */
-.showcase.active .title-container{
+.showcase.active .title-container {
     left: calc(25px + 250px);
 }
   
@@ -64,20 +65,18 @@
     left: calc(25px + 250px);
 }
 
-
-
 .toggle {
     position: relative;
     width: 60px;
     height: 60px;
-    background: url('/assets/white-menu.png');
+    background: url('/white-menu.png');
     background-repeat: no-repeat;
     background-size: 30px;
     background-position: center;
 }
 
 .toggle.active{
-    background: url('/assets/white-X.png');
+    background: url('/white-X.png');
     background-repeat: no-repeat;
     background-size: 30px;
     background-position: center;
@@ -168,7 +167,6 @@
     font-weight: 400;
     margin: 20px 0;
     max-width: 700px;
-   
 }
 
 .text a {
@@ -209,7 +207,6 @@
     height: 60px;
     display: block;
     margin: 0 auto;
-   
 }
 
 .showcase.active .social{

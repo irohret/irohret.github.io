@@ -1,0 +1,300 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+   
+}
+
+.background {
+    position: fixed; 
+    background-size: cover
+    top: 0; 
+    left: 0; 
+      
+    /* Preserve aspet ratio */
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.banner {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 6vh; /* Reduced the height to 6vh */
+    padding: 30px; /* banner bottom padding */
+    align-items: center;
+    color: white; 
+    transition: 0.5s;
+    z-index: 100; /* add this line */
+    background-color: #2c4280;
+    height: 50px;
+}
+
+.banner header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px; /* height,  x axis -> <- (move in text)*/
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.banner.active {
+    right: 300px;
+}
+
+.logo {
+    position: relative;
+    margin: 0;
+    padding: 0px; 
+    font-size: 30px;
+    left: 25px;
+    transition: left 0.5s ease;
+}
+
+.banner.active .logo {
+    left: calc(75px + 250px);
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: url('/white-menu.png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+}
+
+.toggle.active {
+    background: url('/white-X.png');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+}
+
+.main-content p { 
+	color: black;
+    padding-top: 1em;
+    font-size: 1.3rem;
+}
+
+.main-content{
+    max-width: 2000px;
+    padding-top: 10%;
+    color: black;
+    font-size: 1.3rem;
+    position: relative;
+    font-family: Helvetica, Arial, sans-serif;
+    left: 0px;
+    transition: left 0.5s ease;
+    
+}
+
+.container .main-content {
+   color: black;
+   left: 25px;
+   transition: left 0.5s ease;  
+}
+
+.banner.active .main-content {
+    left: calc(25px + 350px);
+}
+
+.banner.active .sidebar{
+    right: 0px;
+}
+
+.sidebar details {
+    margin-bottom: 10px;
+}
+  
+.sidebar.search-box { 
+    margin-bottom: 20px;
+    border-color: black;
+}
+
+#search-box input[type="text"] {
+    width: 90%; /* search box size for the left (x axis) */
+    padding: 15px; /* scale search box size */ 
+    border: 0;
+    border-color: black;
+    border-radius: 20px;
+    margin-top: 10px; /* move search box from the top of the sidebar*/
+}
+
+.banner.active .sidebar-hidden{
+
+    position: absolute;
+    top: 0; /* adjust side top potisiton */
+    right: 10px;
+    width: 250px; /* adjust size of sidebar on the x-axis*/
+    height: 100%; 
+    /*background-color: #3d414d;*/
+    padding: 20px;
+    align-items: center;
+    justify-content: center;  
+}
+
+
+
+.sidebar {
+    display: none;
+}
+
+.sidebar ul {
+    position: relative;
+    list-style-type: none;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    font-size: 24px;
+    color: black;
+}
+
+/* change colors when curver is over and option */
+.sidebar ul li a:hover {
+    color: blue;
+}
+
+#search-box input[type="text"] {
+    width: 90%; /* search box size for the left (x axis) */
+    padding: 15px; /* scale search box size */ 
+    border: 0;
+    border-color: black;
+    border-radius: 20px;
+    margin-top: 10px; /* move search box from the top of the sidebar*/
+}
+
+.menu_bar {
+	position: fixed; /* fix the poition of the side bar */
+    top: 90px; /* adjust side top potisiton */
+    left: 0;
+    width: 250px; /* adjust size of sidebar on the x-axis*/
+    height: 100%; 
+    /*background-color: #3d414d;*/
+    background-color: #a7a4a472;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.menu {
+	width: 100px;
+	background-color: #707173; 
+}
+
+.row {
+    display:flex;
+    padding-top: 60px;
+}
+
+.col {
+    flex:1;
+}
+
+.col:last-child {
+    margin-left: 1em;
+}
+
+input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+  
+.tabs {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
+}
+  
+.tab {
+    width: 100%;
+    color: white;
+    overflow: hidden;
+}
+  
+.tab-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background: #4d75e1;
+    font-weight: bold;
+    cursor: pointer;
+}
+  
+.tab-lable:hover {
+    color: pink;
+}
+  
+.tab-lable::after {
+    content: "\276F";
+    width: 1em;
+    height: 1em;
+    color: black;
+    text-align: center;
+    transition: all .35s;
+}
+  
+.tab-content {
+    max-height: 0;
+    padding: 0 1em;
+    color: black;
+    background: white;
+    transition: all .35s;
+}
+  
+.tab-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: black;
+    cursor: pointer;
+}
+
+input:checked {
+    /* Change background color of corresponding tab label */
+    background-color: darken(#2c4280, 10%);
+}
+  
+input:checked ~ .tab-content {
+    /* Set maximum height and add padding to content */
+    max-height: 100vh;
+    padding: 1em;
+}
+  
+input:checked + .tab-label::after {
+    /* Rotate the arrow icon 90 degrees */
+    transform: rotate(90deg);
+}
+
+.footer {
+    position: fixed; 
+    padding-top: 45px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background-color: #2c4280;
+    color: white;
+    padding: 5px;
+}
+
+.footer p {
+    padding-top: 1em;
+    font-size: 20px;
+    text-indent: 40px;
+}
