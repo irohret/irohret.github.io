@@ -51,7 +51,7 @@
     position: relative;
     font-size: 60px;
     left: 25px;
-    transition: left 0.5s ease;
+    transition: 0.5s ;
 }
   
 /* move the 'blog title' info the right if the sidebar is active */
@@ -75,14 +75,14 @@
     background-position: center;
 }
 
-.toggle.active{
+.toggle.active {
     background: url('white-X.png');
     background-repeat: no-repeat;
     background-size: 30px;
     background-position: center;
 }
 
-.showcase video{
+.showcase video {
     position: absolute;
     top: 0;
     left: 0;
@@ -127,7 +127,7 @@
 }
 
 /* search font color */
-.searchTerm:focus{
+.searchTerm:focus {
     color: #000000;
 }
    
@@ -158,6 +158,14 @@
 /* change colors when curver is over and option */
 .sidebar ul li a:hover {
     color: blue;
+}
+
+.text{ /* center text */
+    position: relative; /* auto aline the text with the size of the window */
+    z-index: 10;
+    left: 25px; /* shift left or right by x number of pixels */
+    transition: 0.5s; /* add transition property for 'text' content*/
+    padding-right: 220px;
 }
 
 .text h2 {
@@ -192,18 +200,11 @@
     margin-top: 10px;
 }
 
-.text{ /* center text */
-    position: relative; /* auto aline the text with the size of the window */
-    z-index: 10;
-    left: 25px; /* shift left or right by x number of pixels */
-    transition: left 0.5s ease; /* add transition property for 'text' content*/
-}
-
-.text a:hover{
+.text a:hover {
     letter-spacing: 6px;
 }
 
-.social{
+.social {
     position: absolute;
     z-index: 10;
     bottom: 80px; /* change img location */
@@ -212,7 +213,7 @@
     justify-content: center;
     align-items: center;
     left: 100px;
-    transition: left 0.5s ease; /* add transition effect */
+    transition: 0.5s; /* add transition effect */
 }
 
 .social img {
@@ -222,6 +223,6 @@
     margin: 0 auto;
 }
 
-.showcase.active .social{
+.showcase.active .social {
     left: calc(25px + 350px);
 }

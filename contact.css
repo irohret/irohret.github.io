@@ -1,4 +1,5 @@
 
+
 /*
   # will style the single element declared with an attribute id="foo"
   . will style all elements with an attribute class="foo" 
@@ -15,8 +16,6 @@
     font-family: 'Poppins', sans-serif;
 
 }
-
-
 
 .showcase {
     position: absolute;
@@ -61,7 +60,6 @@
     justify-content: space-between;
 }
 
-
 .banner.active,
 .showcase.active {
     right: 300px;
@@ -71,9 +69,8 @@
     position: relative;
     font-size: 30px;
     left: 0px;
-    transition: left 0.5s ease;
+    transition: 0.5s ;
 }
-
 
 /* move the 'blog title' info the right if the sidebar is active */
 .banner.active .title-container {
@@ -81,25 +78,48 @@
     left: calc(25px + 250px);
 }
   
-/* main body text */ 
-.main-content p { 
-	color: rgb(0, 0, 0);
-    padding-top: 1em;
-    font-size: 1.3rem;
-}
-
+/* main body text  */ 
 .main-content {
-    padding-top: 10%;
+    padding-top: 1%;
     color: rgb(0, 0, 0);
     font-size: 1.3rem;
     position: relative;
     font-family: Helvetica, Arial, sans-serif;
     padding-right: 10px;
-   /* transition: left 0.5s ease; */
     zoom: 90%;
     left: 200px;
     max-width: 1200px;
-    
+}
+
+.main-content p { 
+	color: rgb(0, 0, 0);
+    padding-top: 1em;
+    font-size: 1.3rem;
+    left: 0px;  
+}
+
+/* center text */ 
+.text {
+    transition: 0.5s;
+    padding-right: 120px;
+    margin: auto;
+    left: 0px; 
+}
+
+.text p {
+    font-size: 1.1em;
+    font-weight: 400;
+    margin: 20px 0;
+    max-width: 2000px; 
+}
+
+/* move the 'text' info the right if the sidebar is active */
+.showcase.active .text {
+    padding-left: 300px;
+    padding-right: 120px;
+    margin: auto;
+    transition: 0.5s;
+    padding-top: 75px;
 }
 
 /* right pull out bar trigger */
@@ -122,17 +142,6 @@
     z-index: 10;
 }
 
-.overlay {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #0ed8e6; /* add an color layer onto the background */
-    mix-blend-mode: overlay;
-}
-
 .sidebar details {
     margin-bottom: 10px;
 }
@@ -145,7 +154,17 @@
     right: 35px; /* max is 60px */
     padding-top: 10px;
     padding-bottom: 40px;
-    
+}
+
+.search-bar {
+    width: 100%;
+    position: relative;
+    display: flex;
+    right: 0px; /* max is 60px */
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
   
 .searchTerm {
@@ -158,14 +177,13 @@
     outline: none;
     color: #9DBFAF;
     font-size: larger;
-    
 }
 
 /* search font color */
 .searchTerm:focus{
     color: #000000;
 }
-
+  
 /* right pull out bar */
 .sidebar {
     position: absolute;
@@ -195,33 +213,95 @@
     color: blue;
 }
 
-/* move the 'text' info the right if the sidebar is active */
+/* use for any code block */ 
+.code_snip {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    overflow: auto;
+    font-family: monospace;
+    white-space: pre-wrap;
+    padding: 0;
+    border: 1px solid;
+    border-color: black;
+}
+  
+#code{
+    color: black;
+    font-size: 1.2em;
+}
 
-.text { /* center text */
-   
-    padding-right: 120px;
+/* left chapter bar and search */ 
+.chapter-bar {
+    height: 3000px;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 100px;
+    background-color: #7a7a7a72;
+}
     
-    margin: auto;
+.row {
+    display:flex;
+    padding-top: 10px;
 }
 
-/* move the 'text' info the right if the sidebar is active */
-
-.showcase.active .text {
-    /*left: calc(75px + 250px);
-    width: 70%; */
-    padding-left: 300px;
-    padding-right: 120px;
-    margin: auto;
+.col {
+    flex:1;
 }
 
-.text p {
-    font-size: 1.1em;
-    font-weight: 400;
-    margin: 20px 0;
-    max-width: 2000px; 
+/* padding on the chapter tabs */
+.col:last-child {
+   margin: auto;
+   margin-left: 10px;
+   margin-right: 10px;
+   
 }
 
-
+.row input {
+    position: absolute;
+    opacity: 0%;
+    z-index: -1;
+}
+  
+.tabs {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
+}
+  
+.tab {
+    width: 100%;
+    color: white;
+    overflow: hidden;
+}
+  
+.tab-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    /* background: #444655; */
+    background: #757687;
+    background: #6372B5;
+   
+    font-weight: bold;
+    cursor: pointer;
+}
+  
+.tab-content {
+    max-height: 0;
+    padding: 0 1em;
+    color: black;
+    background: white;
+    transition: all .35s;
+}
+  
+input:checked ~ .tab-content {
+    /* Set maximum height and add padding to content */
+    max-height: 100vh;
+    padding: 1em;
+}
+  
 .footer {
     position: fixed; 
     padding-top: 45px;
@@ -239,38 +319,4 @@
     padding-top: 1em;
     font-size: 20px;
     text-indent: 40px;
-}
-
-.code_snip {
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    overflow: auto;
-    font-family: monospace;
-    white-space: pre-wrap;
-    padding: 0;
-    border: 1px solid;
-    border-color: black;
-}
-  
-#code{
-    color: black;
-    font-size: 1.2em;
-}
-
-
-.chapter-bar {
-    height: 3000px;
-    width: 250px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding-top: 200px;
-    background-color: lightblue;
-    
-}
-    
-.chapter-bar div{
-    padding: 8px;
-    font-size: 24px;
-    display: block;
 }
