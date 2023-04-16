@@ -1,0 +1,321 @@
+
+
+/*
+  # will style the single element declared with an attribute id="foo"
+  . will style all elements with an attribute class="foo" 
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+/* universal selecter for all the text and reset everything */ 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.showcase {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    /*background: #111;*/
+    background: #ffffff;
+    align-items: center;
+    color: white; 
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.banner {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    background: #2c4280;
+    align-items: center;
+    color: white; 
+    z-index: 10;
+    transition: 0.5s;
+}
+
+.banner header {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    top: 0px;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.banner.active,
+.showcase.active {
+    right: 300px;
+}
+
+.title-container {
+    position: relative;
+    font-size: 30px;
+    left: 0px;
+    transition: 0.5s ;
+}
+
+/* move the 'blog title' info the right if the sidebar is active */
+.banner.active .title-container {
+     /* position: relative; */
+    left: calc(25px + 250px);
+}
+  
+/* main body text  */ 
+.main-content {
+    padding-top: 1%;
+    color: rgb(0, 0, 0);
+    font-size: 1.3rem;
+    position: relative;
+    font-family: Helvetica, Arial, sans-serif;
+    padding-right: 10px;
+    zoom: 90%;
+    left: 200px;
+    max-width: 1200px;
+}
+
+.main-content p { 
+	color: rgb(0, 0, 0);
+    padding-top: 1em;
+    font-size: 1.3rem;
+    left: 0px;  
+}
+
+/* center text */ 
+.text {
+    transition: 0.5s;
+    padding-right: 120px;
+    margin: auto;
+    left: 0px; 
+}
+
+.text p {
+    font-size: 1.1em;
+    font-weight: 400;
+    margin: 20px 0;
+    max-width: 2000px; 
+}
+
+/* move the 'text' info the right if the sidebar is active */
+.showcase.active .text {
+    padding-left: 300px;
+    padding-right: 120px;
+    margin: auto;
+    transition: 0.5s;
+}
+
+/* right pull out bar trigger */
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: url(../assets/white-menu.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    z-index: 10;
+}
+
+.toggle.active{
+    background: url(../assets/white-X.png);
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: center;
+    z-index: 10;
+}
+
+.sidebar details {
+    margin-bottom: 10px;
+}
+  
+/* search bar */
+.search {
+    width: 120%;
+    position: relative;
+    display: flex;
+    right: 35px; /* max is 60px */
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+.search-bar {
+    width: 100%;
+    position: relative;
+    display: flex;
+    right: 0px; /* max is 60px */
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+  
+.searchTerm {
+    width: 100%;
+    height: 60px;
+   /* border: 3px solid #00B4CC; */
+    border: 3px solid #2c4280;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    color: #9DBFAF;
+    font-size: larger;
+}
+
+/* search font color */
+.searchTerm:focus{
+    color: #000000;
+}
+  
+/* right pull out bar */
+.sidebar {
+    position: absolute;
+    top: 0px; /* adjust side top potisiton */
+    right: 10px;
+    width: 250px; /* adjust size of sidebar on the x-axis*/
+    height: 100%; 
+    /*background-color: #3d414d;*/
+    padding: 20px;
+    align-items: center;
+    justify-content: center;    
+}
+
+.sidebar ul {
+    position: relative;
+    list-style-type: none;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    font-size: 24px;
+    color: black;
+}
+
+/* change colors when curver is over and option */
+.sidebar ul li a:hover {
+    color: blue;
+}
+
+/* use for any code block */ 
+.code_snip {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    overflow: auto;
+    font-family: monospace;
+    white-space: pre-wrap;
+    padding: 0;
+    border: 1px solid;
+    border-color: black;
+}
+  
+#code{
+    color: black;
+    font-size: 1.2em;
+}
+
+/* left chapter bar and search */ 
+.chapter-bar {
+    height: 3000px;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 100px;
+    background-color: #7a7a7a72;
+}
+    
+.row {
+    display:flex;
+    padding-top: 10px;
+}
+
+.col {
+    flex:1;
+}
+
+/* padding on the chapter tabs */
+.col:last-child {
+   margin: auto;
+   margin-left: 10px;
+   margin-right: 10px;
+   
+}
+
+.row input {
+    position: absolute;
+    opacity: 0%;
+    z-index: -1;
+}
+  
+.tabs {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
+}
+  
+.tab {
+    width: 100%;
+    color: white;
+    overflow: hidden;
+}
+  
+.tab-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    /* background: #444655; */
+    background: #757687;
+    background: #6372B5;
+   
+    font-weight: bold;
+    cursor: pointer;
+}
+  
+.tab-content {
+    max-height: 0;
+    padding: 0 1em;
+    color: black;
+    background: white;
+    transition: all .35s;
+}
+  
+input:checked ~ .tab-content {
+    /* Set maximum height and add padding to content */
+    max-height: 100vh;
+    padding: 1em;
+}
+  
+.footer {
+    position: fixed; 
+    padding-top: 45px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background-color: #2c4280;
+    color: white;
+    padding: 5px;
+    z-index: 1000;
+}
+
+.footer p {
+    padding-top: 1em;
+    font-size: 20px;
+    text-indent: 40px;
+}
