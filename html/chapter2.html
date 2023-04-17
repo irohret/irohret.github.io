@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/chapter1.css">
+        <link rel="icon" href="../assets/binary-code.png">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.61.0/lib/codemirror.min.css">
+    	<script src="https://cdn.jsdelivr.net/npm/codemirror@5.61.0/addon/runmode/runmode-standalone.min.js"></script>
+    	<script src="https://cdn.jsdelivr.net/npm/codemirror@5.61.0/mode/python/python.min.js"></script>
+		<title>The Digital Dialogue </title>
+    </head>
+
+    <section class="banner">
+        <header>
+            <h2 class="title-container"> The Digital Dialogue </h2> <!-- logo title-->
+            <div class="toggle "></div> <!-- hamburger and X sidebar || type active to see  menu-->   
+        </header>  
+    </section>
+  
+    <section class="showcase"> <!-- type active to see menu -->
+        
+        <div class="chapter-bar">
+
+            <form action="https://www.google.com">
+                <div class="search-bar">
+                    <input type="text" class="searchTerm" placeholder="Search...">
+                </div>
+            </form>
+            
+            <div class="row">
+				<div class="col">
+		
+					<div class="tabs">
+						<div class="tab">
+							<input type="checkbox" id="chck1">
+							<label class="tab-label" for="chck1">Chapter 1: Getting Started</label>
+							<div class="tab-content">							
+                                <a href="../web/html/chapter2.html">What and Why?</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="tabs">
+						<div class="tab">
+							<input type="checkbox" id="chck2">
+							<label class="tab-label" for="chck2">Chapter 2: software development tools</label>
+							<div class="tab-content">						
+                                <a href="../web/html/chapter2.html">IDEs, version control (Git), and debugging tools</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="tabs">
+						<div class="tab">
+							<input type="checkbox" id="chck3">
+							<label class="tab-label" for="chck3">Chapter 3: Programming
+							</label>
+							<div class="tab-content">			
+                                <a href="../web/html/python.html">Python</a>
+                                <br> </br>
+                                <a href="../web/html/c.html">C/C++</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+        </div>
+
+        <div class="text">
+            <section class="main-content"> <!-- -->
+                <section>
+                    <h1> IDEs, version control (Git), and debugging tools </h1>
+                    
+                </section>
+              
+            </section>
+        </div>
+    </section>
+
+    <div class="sidebar"> <!-- sidebar or menu bar info goes here-->
+        <form action="https://www.google.com">
+            <div class="search">
+                <input type="text" class="searchTerm" placeholder="Search...">
+              
+            </div>
+        </form>  
+
+        <ul> 
+            <li><a href="#"></a> <!-- Homepage -->
+                <li><a href="../index.html">Home</a></li>
+            </li>
+            <li><a href="#"></a> <!-- CS topics -->
+                <li><a href="../html/contents.html">Topics</a></li>
+            </li> 
+            <li><a href="#"></a> <!-- contact -->
+                <li><a href="../html/contact.html">Contact</a></li>
+            </li>
+        </ul>
+
+    </div>
+
+    <!-- sidebare chance JS code-->
+    <script> 
+        const menuToggle = document.querySelector('.toggle');
+        const showcase = document.querySelector('.showcase');
+        const banner = document.querySelector('.banner');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            showcase.classList.toggle('active');
+            banner.classList.toggle('active');
+        })
+    </script>
+
+	<section class="footer">
+		<p> © Copyright 2023 by Isaac Rohret. All rights reversed.</p>
+	</section>
+    
+</html>
+
