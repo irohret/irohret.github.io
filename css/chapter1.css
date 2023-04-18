@@ -17,6 +17,17 @@
 
 }
 
+.select_topic {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 11%;
+    
+}
+
+.select_topic h1{   
+    color: rgb(0, 0, 0);   
+}
+
 .showcase {
     position: absolute;
     right: 0;
@@ -24,6 +35,7 @@
     min-height: 100vh;
     padding: 100px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     /*background: #111;*/
     background: #ffffff;
@@ -34,7 +46,7 @@
 }
 
 .banner {
-    position: absolute;
+    position: fixed;
     right: 0;
     width: 100%;
     min-height: 6vh;
@@ -80,7 +92,8 @@
   
 /* main body text  */ 
 .main-content {
-    padding-top: 1%;
+    margin-top: 25%;
+    margin-bottom: 20%;
     color: rgb(0, 0, 0);
     font-size: 1.3rem;
     position: relative;

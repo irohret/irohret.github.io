@@ -1,0 +1,106 @@
+/*** VARIABLES ***/
+/* Colors */
+:root {
+    --black: #1d1f20;
+    --blue: #83e4e2;
+    --green: #a2ed56;
+    --yellow: #fddc32;
+    --white: #fafafa;
+    --pink: #e6687d;
+}
+
+
+.page {
+    margin-top: 6vh;
+    color: rgb(0, 0, 0);
+}
+
+.side-notes p {
+    border-left: 6px solid blue;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    padding-top: 1vh;;
+    left: 50%;
+    /*border-radius: 1cqb; */
+}
+.warning p {
+    border-left: 6px solid rgb(241, 0, 0);
+    padding-left: 30px;
+    padding-bottom: 10px;
+    padding-top: 1vh;;
+    left: 50%;
+    /*border-radius: 1cqb; */
+}
+
+
+
+.topics{
+    padding-top: 3em;
+}
+
+/* text */
+ol.gradient-list {
+    counter-reset: gradient-counter;
+    list-style: none;
+    margin: 1.75rem 0;
+    padding-left: 1rem;
+}
+  
+ol.gradient-list > li {
+    background: var(--white);
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+    counter-increment: gradient-counter;
+    margin-top: 2rem; /* pading bewteen each block */
+    min-height: 3rem; /* pading for each block */
+    padding: 1rem 1rem 1rem 6rem; /* text box  -- > top paddding, left shift, bottom padding, right shift < -- */
+    position: relative;
+    font-size: 1.5em;
+    
+}
+  
+ol.gradient-list > li::before,
+ol.gradient-list > li::after {
+    background: linear-gradient(135deg, var(--green) 0%, var(--blue) 100%);
+    border-radius: 1rem 1rem 0 1rem;
+    content: '';
+    height: 4rem;
+    left: -1rem;
+    overflow: hidden;
+    position: absolute;
+    top: -1rem;
+    width: 4rem;
+   
+}
+
+
+/* number gradiente box edits */
+ol.gradient-list > li::before {
+    align-items: flex-end;
+    content: counter(gradient-counter);
+    color: var(--black);
+    display: flex;
+    font: 900 1.5em/1 'Montserrat';
+    justify-content: flex-end;
+    padding: 0.125em 0.25em; /* padding inside the box */
+    z-index: 1;
+    
+}
+
+
+/* Loop through list items and apply gradient */
+/*
+@for $i from 1 through 5 {
+    ol.gradient-list > li:nth-child(10n+#{$i})::before {
+      background: linear-gradient(135deg, rgba(var(--green), $i * 0.2) 0%, rgba(var(--yellow), $i * 0.2) 100%);
+    }
+}
+  
+@for $i from 6 through 10 {
+    ol.gradient-list > li:nth-child(10n+#{$i})::before {
+      background: linear-gradient(135deg, rgba(var(--green), 1 - (($i - 5) * 0.2)) 0%, rgba(var(--yellow), 1 - (($i - 5) * 0.2)) 100%);
+    }
+}
+  
+ol.gradient-list > li + li {
+    margin-top: 2rem;
+} */
